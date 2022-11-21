@@ -1,28 +1,31 @@
+// let number = Array.from(document.querySelectorAll('[data-number]'));
+// let operator = document.querySelectorAll('[data-operator]');
+// let equals = document.querySelector('data-equals');
+// let clear = document.querySelector('clear');
 
-// numberButtons.addEventListener("click, button");
+// number.addEventListener('click', (e)=>{
+//     let display = document.querySelector('.display').value;
+//     document.querySelector('.display').innerHTML = display.replace('0', number);
+// })
 
-// function button () {
-    //     document.getElementsById('#demo').innerHTML = "seven";
-// }
+let display = document.querySelector('.display');
+let buttons = document.getElementsByClassName('button');
 
-// button();
-// function button(){
-    //     document.getElementsById('#display').innerHTML = "dgdgdg";
-    // }
-
-function assigning(){
-    let display = document.querySelector('.display')   
-    let numberButtons = document.querySelectorAll('data-number');
-    let operatorButtons = document.querySelectorAll('data-operator');
-    let deleteButton = document.querySelectorAll('data-delete');
-    let equalsButton = document.querySelectorAll('data-equals');
-
-    keys.addEventListener('click', e => {
-        if (e.target.matches(button)){
-            // do something 
+buttons.map (button =>{
+    button.addEventListener('switch', function(e){
+        switch(e.target.innerText){
+            case 'del':
+                display.innerText = '';
+                break;
+            case '=':
+                try{
+                    display.innerText = eval(display.innerText);
+                }catch{
+                    display.innerText = ""
+                }
+                break;
+                default:
+                    display.innerText += e.target.innerText;
         }
-        const key = e.target
-        const action = key.dataset.number
-    })
-}
-
+    });
+});
