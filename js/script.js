@@ -1,31 +1,23 @@
-// let number = Array.from(document.querySelectorAll('[data-number]'));
-// let operator = document.querySelectorAll('[data-operator]');
-// let equals = document.querySelector('data-equals');
-// let clear = document.querySelector('clear');
+//assigning variables to query Selectors
+const numberButtons = document.querySelectorAll('.button');
+const display = document.querySelector('#display');
 
-// number.addEventListener('click', (e)=>{
-//     let display = document.querySelector('.display').value;
-//     document.querySelector('.display').innerHTML = display.replace('0', number);
-// })
-
-let display = document.querySelector('.display');
-let buttons = document.getElementsByClassName('button');
-
-buttons.map (button =>{
-    button.addEventListener('switch', function(e){
-        switch(e.target.innerText){
-            case 'del':
-                display.innerText = '';
-                break;
-            case '=':
-                try{
-                    display.innerText = eval(display.innerText);
-                }catch{
-                    display.innerText = ""
-                }
-                break;
-                default:
-                    display.innerText += e.target.innerText;
-        }
-    });
-});
+//loop for the buttons so all buttons can be selected
+for(let b = 0; b < numberButtons.length; b++){
+    numberButtons[b].addEventListener('click',()=>{
+        console.log(numberButtons[b].innerText)
+        let button = numberButtons[b].innerText;
+        display.value += button;
+    })
+}
+//Equation and display on the input element
+let equal = document.querySelector('#equalBtn');
+equal.addEventListener('click', ()=> {
+    display.value = eval(display.value)    
+})
+//delete button
+let del = document.querySelector('#delBtn');
+del.addEventListener('click', ()=>{
+    display.value = "";
+})
+//decimal
