@@ -10,14 +10,22 @@ for(let b = 0; b < numberButtons.length; b++){
         display.value += button;
     })
 }
+
 //Equation and display on the input element
 let equal = document.querySelector('#equalBtn');
 equal.addEventListener('click', ()=> {
-    display.value = eval(display.value)    
+        try{
+            display.value = eval(display.value);
+        }catch{
+            display.value = 'Error!' 
+        }
+    
 })
+
 //delete button
 let del = document.querySelector('#delBtn');
 del.addEventListener('click', ()=>{
     display.value = "";
 })
+
 //decimal
