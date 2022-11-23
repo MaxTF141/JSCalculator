@@ -1,11 +1,11 @@
 //assigning variables to query Selectors
 const numberButtons = document.querySelectorAll('.button');
-const display = document.querySelector('#display');
+const display = document.querySelector('#output');
 
 //loop for the buttons so all buttons can be selected
 for(let b = 0; b < numberButtons.length; b++){
     numberButtons[b].addEventListener('click',()=>{
-        console.log(numberButtons[b].innerText)
+        // console.log(numberButtons[b].innerText)
         let button = numberButtons[b].innerText;
         display.value += button;
     })
