@@ -5,29 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
+    <link href="https://fonts.cdnfonts.com/css/ds-digital" rel="stylesheet">
     <title>Calculator</title>
 </head>
 <body>
     <h1 id="Heading">CALCULATOR</h1>
     <div class="device">
-        <input type="text"id="output" placeholder="0">
+        <input type="text"id="output" placeholder="000000000000000" readonly>
         <div class="keys">
+            <button class="button" id="delBtn">Del</button>
+            <button class="button">+</button>
             <button class="button">7</button>
             <button class="button">8</button>
             <button class="button">9</button>
-            <button class="delete" id="delBtn">Del</button>
-            <button class="button">4</button>
+            <button class="button">-</button>
             <button class="button">5</button>
             <button class="button">6</button>
+            <button class="button">4</button>
             <button class="button">/</button>
             <button class="button">1</button>
             <button class="button">2</button>
             <button class="button">3</button>
-            <button class="button">+</button>
+            <button class="equalBtn" id="equalBtn">=</button>
+            <button class="decimal" id="decimal">.</button>
             <button class="button">0</button> 
-            <button class="button">.</button>
-            <button id="equalBtn" class="equal">=</button>
-            <button class="button">-</button>
             <button class="button">*</button>
         </div>  
     </div>
