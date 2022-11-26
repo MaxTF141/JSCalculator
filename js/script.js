@@ -2,7 +2,6 @@
 const numberButtons = document.querySelectorAll('.button');
 const display = document.querySelector('#output');
 let emptyArray = [];
-
 //loop for the buttons so all buttons can be selected
 for(let b = 0; b < numberButtons.length; b++){
     numberButtons[b].addEventListener('click',(e)=>{
@@ -32,36 +31,30 @@ for(let b = 0; b < numberButtons.length; b++){
             }
         })
     }
-
+//Equal Button 
 let equal = document.querySelector('#equalBtn');
 equal.addEventListener('click', e => {
     switch(e.target.innerText){
         default:
             console.log(display.value);
-            try{
-                if(display.value == ''){
-                    display.value = ''
-                }else{
-                display.value = eval(display.value).toFixed(2)
-                console.log(typeof(display.value))
-                emptyArray = [];
-                emptyArray = [...display.value.split('')]
-                console.log(emptyArray);
+        try{
+            if(display.value == ''){
+                display.value = ''
+            }else{
+            display.value = eval(display.value).toFixed(2)
+            console.log(typeof(display.value))
+            emptyArray = [];
+            emptyArray = [...display.value.split('')]
+            console.log(emptyArray);
         }
         }catch{
             display.value = 'Error!';
         }
     }
 })
-
 //delete button
 let del = document.querySelector('#delBtn');
 del.addEventListener('click', ()=>{
     display.value = display.value.slice(0, -1);
     emptyArray.pop();
 })
-display.addEventListener('input',function(e) {
-    let decNone = /\.$/;
-    let currentValue = e.target.value;
-    console.log(decNone.test(currentValue));
-});
