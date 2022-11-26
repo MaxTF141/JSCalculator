@@ -1,4 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/ds-digital');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');    
+/* @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;300&display=swap');  */
 *,
 *::before,
 *::after {
@@ -18,9 +20,10 @@ body {
 
 .device {
     margin-top: 50px;
+    padding: 10px;
     border: 1px solid #2e2e2e;
-    width: 400px;
-    height: 630px;
+    width: 410px;
+    height: 650px;
     border-radius: 30px;
     background-color: #2e2e2e;
     box-shadow: 0px 0px 43px 2px #2e2e2e;
@@ -51,14 +54,22 @@ button{
     background-color: #373840;
     margin: 5px ;
     border: #2e2e2e;
-    box-shadow:  2px 2px 2px white inset;
+    box-shadow:  5px 7px 10px rgb(117, 117, 117) inset;
+    box-shadow:  5px 7px 10px rgb(117, 117, 117) h-offset;
     border-radius: 15px;
     height: 70px;
     color: white;
     
 }
 button:hover {
-    background-color: #5e5eff;
+    background-color: #d3e0e0;
+    box-shadow:  5px 7px 10px #2e2e2e outset;
+    color: #313840;
+
+}
+.delBtn:hover {
+    background-color: #373840;
+    color: white;
 }
 
 button:nth-of-type(1) {
